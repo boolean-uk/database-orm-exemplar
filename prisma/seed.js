@@ -22,6 +22,23 @@ async function seed() {
 
     console.log('Contact created', createdContact);
 
+    const createdMovie = await prisma.movie.create({
+        data: {
+            title: 'Dodgeball',
+            runtimeMins: 120
+        }
+    });
+
+    console.log('Movie created', createdMovie);
+
+    const createdScreening = await prisma.screening.create({
+        data: {
+            startsAt: new Date()
+        }
+    });
+
+    console.log('Screening created', createdScreening);
+
 
     // Don't edit any of the code below this line
     process.exit(0);
